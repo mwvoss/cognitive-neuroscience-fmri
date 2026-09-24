@@ -26,7 +26,7 @@ https://fastx.divms.uiowa.edu:3443/
 - copy/paste the following to download the data: `wget -O flankerData_n4_FA25.tar.gz https://osf.io/gzc2a/download`
 - unpack the download by copy/pasting this in your terminal: `tar -zxvf flankerData_n4_FA25.tar.gz`
 - type `ls` and you should now see you have a new folder named: `flankerData_n4`
-- the contents of this folder include four sub-folders for subjects sub-001, sub-002, sub-003, sub-004 <br/>
+- the contents of this folder include four sub-folders for subjects sub-001, sub-002, sub-003, sub-004
 
 **Open FSLeyes:**
 
