@@ -1,0 +1,5 @@
+-syntax for new images within these markdown pages
+![Example of a blocked fMRI design](images/design/blocked-design.png)
+
+-control size like
+![The BOLD response](images/bold/bold-response.png){ width="600" }

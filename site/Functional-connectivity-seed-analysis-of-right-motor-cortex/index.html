@@ -1,0 +1,485 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Hands on Practical for Resting-state Functional Connectivity - Cognitive Neuroscience fMRI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hands-on-practical-for-resting-state-functional-connectivity" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Cognitive Neuroscience fMRI" class="md-header__button md-logo" aria-label="Cognitive Neuroscience fMRI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Cognitive Neuroscience fMRI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Hands on Practical for Resting-state Functional Connectivity
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Cognitive Neuroscience fMRI" class="md-nav__button md-logo" aria-label="Cognitive Neuroscience fMRI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Cognitive Neuroscience fMRI
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-will-learn-from-this-lab-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will learn from this lab practice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-preprocess-resting-state-fmri-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1, preprocess resting-state fMRI data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-locate-a-seed-region-of-interest-in-fsleyes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2. Locate a seed region of interest in fsleyes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-add-another-timeseries-from-the-left-motor-cortex-to-see-their-coupling-or-functional-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3. Add another timeseries from the left motor cortex to see their coupling, or functional connectivity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-assignment-demonstrate-a-completed-exercise-for-our-resting-state-right-and-left-motor-cortex-plot-and-add-your-own-third-region-of-interest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Assignment: Demonstrate a completed exercise for our resting state right and left motor cortex plot, and add your own third region of interest
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="hands-on-practical-for-resting-state-functional-connectivity">Hands on Practical for Resting-state Functional Connectivity</h1>
+<p>For this hands on lab practice, we will be using data from sub-001 that you downloaded and processed for the previous block. </p>
+<p>They should be located at <code>~/fmriLab/flankerData_n4/</code>, and you should be able to navigate to it by doing <code>cd ~/fmriLab/flankerData_n4</code>.   </p>
+<p>You should also have the "skull-striped T1 image" saved under <code>~/fmriLab/flankerData_n4/sub-001/anat/</code> </p>
+<h2 id="what-you-will-learn-from-this-lab-practice">What you will learn from this lab practice</h2>
+<ul>
+<li>
+<p>How to replicate this famous finding from Biswal 1995 
+<img width="293" alt="practical-rsfc_biswal-map" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/edb6edaf-b0dd-4c3a-a3c5-367613ffaa8b"></p>
+</li>
+<li>
+<p>Understand how to preprocess fMRI data for resting-state functional connectivity analysis</p>
+</li>
+<li>Understand how to extract and input a "seed" timeseries to search for brain regions that show resting-state connectivity with this "seed" region of interest.</li>
+</ul>
+<h2 id="step-1-preprocess-resting-state-fmri-data">Step 1, preprocess resting-state fMRI data</h2>
+<p>We will use the steps you learned from last block to preprocess the resting-state data.</p>
+<ul>
+<li>
+<p>Let's use FEAT again to set up preprocessing</p>
+<ul>
+<li>Go to the subject folder and launch FSL<ul>
+<li><code>cd ~/fmriLab/flankerData_n4/sub-001/func</code></li>
+<li><code>fsl</code></li>
+</ul>
+</li>
+<li>
+<p>In FSL GUI, open 'FEAT FMRI analysis'</p>
+<ul>
+<li>Define scope of 'First-level analysis' to 'Preprocessing' at the top of the GUI</li>
+<li>Select <code>sub-001-task-rest_bold.nii.gz</code> as input 4D. </li>
+<li>Set output to <code>~/fmriLab/flankerData_n4/sub-001/func/rest_rmot.feat</code></li>
+<li>We will delete the first 4 volumes in <code>Delete volumes</code></li>
+<li>Leave the High pass filter cutoff (s) to 100s</li>
+</ul>
+</li>
+<li>
+<p>Go to the Pre-stats tab. We will do the following preprocessing</p>
+<ul>
+<li>Motion correction with <code>MCFLIRT</code></li>
+<li>Select <code>BET</code></li>
+<li>Spatial smoothing of 6 mm</li>
+<li>select <code>Highpass</code></li>
+</ul>
+</li>
+<li>
+<p>Go to the Registration tab, do the following:</p>
+<ul>
+<li>Select <code>Main Structural Image</code></li>
+<li>Select the "brain extracted" T1 as the main structural image </li>
+<li>Change to normal search and 12 DOF</li>
+<li>For standard space, change to normal search and 12 DOF </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Hit Go!</p>
+</li>
+<li>
+<p>We then need to manually do "low-pass" filter. That is because FEAT does not support it (only does highpass). We have to do it via command line in the terminal.</p>
+</li>
+<li>Now open the terminal, move to the <code>rest_rmot.feat</code> folder you just made: <code>cd ~/fmriLab/flankerData_n4/sub-001/func/rest_rmot.feat</code></li>
+<li>Note, this might not work if you didn't save rest_rmot.feat under sub-001, in that case you have to find our where you saved it.</li>
+<li>Then run this command:
+<code>fslmaths filtered_func_data.nii.gz -bptf -1 2.5 filtered_func_data.nii.gz</code></li>
+<li>Here we are doing lowpass filtering of 0.08 hz. <ul>
+<li>the <code>-bptf</code> option expects a high-pass sigma and a low-pass sigma, which can be caluclated by</li>
+<li><code>highpass_sigma = 1 / (2.35 * TR * HP_freq)</code> (we use "-1" because we already highpassed the data)</li>
+<li><code>lowpass_sigma = 1 / (2.35 * TR * LP_freq))</code> (remember TR is 2s)</li>
+<li>If interested in an explanation for this, see here: https://www.jiscmail.ac.uk/cgi-bin/webadmin?A2=fsl;fc5b33c5.1205 </li>
+</ul>
+</li>
+</ul>
+<h2 id="step-2-locate-a-seed-region-of-interest-in-fsleyes">Step 2. Locate a seed region of interest in fsleyes</h2>
+<ul>
+<li>
+<p>Stay in the preprocessed output folder <code>~/fmriLab/flankerData_n4/sub-001/func/rest_rmot.feat/</code></p>
+</li>
+<li>
+<p>Locate the right motor cortex</p>
+</li>
+<li>Use fsleyes to open up the preprocessed structural image<ul>
+<li><code>file</code>, <code>add from file</code>, goto <code>reg</code>, select <code>highres</code></li>
+</ul>
+</li>
+<li>Also add the <code>filtered_func_data</code> </li>
+<li>In the Overlay list panel, select filtered_func_data image </li>
+<li>To navigate to the right motor cortex, enter the following x y z coordinate for scanner anatomical space: \
+x=34 (top row), y=-12 (middle row), z=24 (lower row)</li>
+<li>With the filtered_func_data selected, select View -&gt; Timeseries, and you should see a timeseries plot on the bottom panel of fsleyes, like below</li>
+</ul>
+<p><img width="80%" height="80%" alt="funcTimeseries" src="https://github.com/user-attachments/assets/fd84c8ea-9f58-4015-824f-e50b3fc2ef3f" /></p>
+<ul>
+<li>Now if you toggle UP the structural image, you can see the timeseries is from the hand "knob" area of the right motor cortex</li>
+</ul>
+<p><img width="80%" height="80%" alt="funcTimeseriesWithStruc" src="https://github.com/user-attachments/assets/9fa859b0-1392-400c-8316-031c61e4d43c" /></p>
+<h2 id="step-3-add-another-timeseries-from-the-left-motor-cortex-to-see-their-coupling-or-functional-connectivity">Step 3. Add another timeseries from the left motor cortex to see their coupling, or functional connectivity</h2>
+<ul>
+<li>We will now add another timeseries in the same network, to see the coupling of the right and left motor cortex at rest</li>
+<li>Scale the right motor cortex timeseries by selecting Plotting mode: Normalised </li>
+<li>Add the normalised plot to be "fixed" in the timeseries window by clicking the + in the plot list and keep the line blue</li>
+<li>Now select the filtered_func_data image again, and enter the following x y z coordinate for scanner anatomical space: \
+x=-33 (top row), y=-33 (middle row), z=24 (lower row). Another timeseries will appear in normalised units.</li>
+<li>Add the new timeseries to also be "fixed" in the timeseries window by clicking the + in the plot list and change the line color to red</li>
+</ul>
+<p><img width="80%" height="80%" alt="Lmot" src="https://github.com/user-attachments/assets/dc776ac5-34c3-46bc-80a2-5b824e785458" /></p>
+<h2 id="technical-assignment-demonstrate-a-completed-exercise-for-our-resting-state-right-and-left-motor-cortex-plot-and-add-your-own-third-region-of-interest">Technical Assignment: Demonstrate a completed exercise for our resting state right and left motor cortex plot, and add your own third region of interest</h2>
+<ul>
+<li>Plot the right motor cortex as shown above in blue</li>
+<li>Plot the left motor cortex as shown above in red</li>
+<li>Pick a third region in the brain that you think should NOT have strong functional connectivity with the right motor cortex, and plot it in green. </li>
+</ul>
+<p><br/>
+<br/>
+<br/></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
