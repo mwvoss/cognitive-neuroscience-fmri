@@ -20,10 +20,13 @@ https://fastx.divms.uiowa.edu:3443/
 
 **Second prep step:** Download some images.
 
-- Copy/paste `wget -O lab01_images.tar.gz https://osf.io/bprq5/download/`.
-- Use commands introduced above to see what was downloaded.
-- To unpack the download, copy/paste `tar -xvf lab01_images.tar.gz`.
-- Move yourself into the folder with data by typing `cd osfshare`.
+**Open terminal and move to your fmriLab folder**:<br/>
+*  open your terminal application 
+*  at the prompt, move to the bids directory in the terminal by typing `cd ~/fmriLab/`
+*  copy/paste the following to download the data: `wget -O flankerData_n4_FA25.tar.gz https://osf.io/gzc2a/download`
+*  unpack the download by copy/pasting this in your terminal: `tar -zxvf flankerData_n4_FA25.tar.gz`
+*  type `ls` and you should now see you have a new folder named: `flankerData_n4`
+*  the contents of this folder include four sub-folders for subjects sub-001, sub-002, sub-003, sub-004 <br/>
 
 **Open FSLeyes:**
 
@@ -33,8 +36,8 @@ https://fastx.divms.uiowa.edu:3443/
 **Open an image with FSLeyes:**
 
 - Click on `File` → `Add from file`.
-- Open the file named `sub-97-T1w_defaced.nii.gz`.
-- Overlay another file: open the file named `sub-97-T1w_brain.nii.gz`.
+- Open the file named `sub-001_T1w_defaced.nii.gz` which is in sub-001's `anat` folder.
+- Overlay another file: open the file named `sub-001_T1w_defaced_brain.nii.gz`.
 - Change the color scale of the top image to see what is different.
 
 **Understanding the T1 image: Try to answer these questions with your neighbors.**
@@ -49,7 +52,7 @@ https://fastx.divms.uiowa.edu:3443/
 **Add a functional image on top of the structural:**
 
 - Use the steps learned above to add a new image.
-- Add the file named `sub-97_task-flanker_bold.nii.gz`.
+- Add the file named `sub-001_task-flanker_bold.nii.gz` which is in sub-001's `func` folder.
 - Place the cursor somewhere in the brain and then toggle the functional image on/off using this button:
 
 ![Introduction-to-FSLeyes_toggle-eye-fsleyes](https://github.com/mwvoss/PSY4025_FA23/assets/24663988/053288c2-8086-4b68-b2cf-5b5ee4598da1)
