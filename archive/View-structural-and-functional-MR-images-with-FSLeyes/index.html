@@ -14,7 +14,7 @@
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
       
 
@@ -42,7 +42,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,7 +71,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Cognitive Neuroscience fMRI" class="md-header__button md-logo" aria-label="Cognitive Neuroscience fMRI" data-md-component="logo">
+    <a href="../.." title="Cognitive Neuroscience fMRI" class="md-header__button md-logo" aria-label="Cognitive Neuroscience fMRI" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -169,7 +169,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Cognitive Neuroscience fMRI" class="md-nav__button md-logo" aria-label="Cognitive Neuroscience fMRI" data-md-component="logo">
+    <a href="../.." title="Cognitive Neuroscience fMRI" class="md-nav__button md-logo" aria-label="Cognitive Neuroscience fMRI" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -187,7 +187,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -242,70 +242,65 @@
 
   <h1>View structural and functional MR images with FSLeyes</h1>
 
-<p><strong>By the end of this practical you should be able to:</strong></p>
-<ul>
-<li>[ ] Use the terminal to navigate to where your MRI data for this course will be</li>
-<li>[ ] Open MR images with FSLeyes</li>
-<li>[ ] Distinguish between structural and functional images in contrast, resolution, and dimensions</li>
-<li>[ ] Use FSLeyes to identify the coordinates and intensity at the cursor location, and toggle images on/off</li>
-<li>[ ] View the time series of a functional image and understand what it means</li>
-</ul>
-<p><strong>Access FastX</strong> through the remote login:</p>
-<p>https://fastx.divms.uiowa.edu:3443/</p>
-<p><strong>First prep step:</strong> Make a folder for holding data for our labs.</p>
-<ul>
-<li>Open your terminal by clicking on the icon showing a little black screen.</li>
-<li>Type <code>pwd</code>. Where are you in the computer filesystem?</li>
-<li>Type <code>ls</code>. What other files are here?</li>
-<li>To make a new folder using the terminal, type <code>mkdir fmriLab</code>.</li>
-<li>Move yourself into the folder with data by typing <code>cd fmriLab</code>.</li>
-</ul>
-<p><strong>Second prep step:</strong> Download some images.</p>
-<ul>
-<li>Copy/paste <code>wget -O lab01_images.tar.gz https://osf.io/bprq5/download/</code>.</li>
-<li>Use commands introduced above to see what was downloaded.</li>
-<li>To unpack the download, copy/paste <code>tar -xvf lab01_images.tar.gz</code>.</li>
-<li>Move yourself into the folder with data by typing <code>cd osfshare</code>.</li>
-</ul>
-<p><strong>Open FSLeyes:</strong></p>
-<ul>
-<li>Open FSLeyes by typing <code>fsleyes &amp;</code>.<ul>
-<li>The <code>&amp;</code> at the end tells the terminal to run this program in the background. Meanwhile, you still have access to the terminal to run other commands.</li>
-</ul>
-</li>
-</ul>
-<p><strong>Open an image with FSLeyes:</strong></p>
-<ul>
-<li>Click on <code>File</code> → <code>Add from file</code>.</li>
-<li>Open the file named <code>sub-97-T1w_defaced.nii.gz</code>.</li>
-<li>Overlay another file: open the file named <code>sub-97-T1w_brain.nii.gz</code>.</li>
-<li>Change the color scale of the top image to see what is different.</li>
-</ul>
-<p><strong>Understanding the T1 image: Try to answer these questions with your neighbors.</strong></p>
-<ol>
-<li>"Defaced" means the face has been removed from the image. Why do you think we did that? How does the defaced image differ from the other image we added?</li>
-<li>What kinds of tissues are the brightest and darkest?</li>
-<li>Place your cursor at different places in the image. How does this affect the coordinates?</li>
-<li>In addition to the coordinate location of your cursor, what additional information is being shown here?</li>
-<li>How many dimensions are there in the image?</li>
-<li>What do the letters on the four sides of each view shown below mean?</li>
-</ol>
-<p><strong>Add a functional image on top of the structural:</strong></p>
-<ul>
-<li>Use the steps learned above to add a new image.</li>
-<li>Add the file named <code>sub-97_task-flanker_bold.nii.gz</code>.</li>
-<li>Place the cursor somewhere in the brain and then toggle the functional image on/off using this button:</li>
-</ul>
-<p><img alt="Introduction-to-FSLeyes_toggle-eye-fsleyes" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/053288c2-8086-4b68-b2cf-5b5ee4598da1" /></p>
-<p><strong>Try to answer these questions with your neighbors.</strong></p>
-<ol>
-<li>Does the functional image have more or less anatomical detail than the structural T1 image?</li>
-<li>What kinds of tissues are the brightest and darkest?</li>
-<li>How many dimensions are there in the functional image?</li>
-<li>Use the menu at the top-left of your screen to view the BOLD time series for a voxel: <code>View</code> → <code>Time Series</code>. How does the time series compare inside vs. outside the brain? What do the numbers represent for the y-axis of the time series?</li>
-</ol>
-<p><strong>Example with time series viewer on:</strong></p>
-<p><img alt="Introduction-to-FSLeyes_time-series" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/e88cfa75-3fc9-4fc4-af3f-415ace30c713" /></p>
+<p><strong>By the end of this practical you should be able to:</strong> <br/>
+* [ ] use the terminal to navigate to where your MRI data for this course will be <br/>
+* [ ] open MR images with fsleyes <br/>
+* [ ] distinguish between structural and functional images in contrast, resolution, and dimensions <br/>
+* [ ] use fsleyes to identify the coordinates and intensity at the cursor location, and toggle images on/off <br/>
+* [ ] view the timeseries of a functional image and understand what it means
+<br/></p>
+<p><strong>Access FastX</strong> through the remote login: <br>
+https://fastx.divms.uiowa.edu:3443/  <br/>
+<br/></p>
+<p><strong>First prep step</strong>, make a folder for holding data for our labs: <br/>
+*  Open your terminal by clicking on the icon showing a little black screen
+*  Type <code>pwd</code>. Where are you in the computer filesystem?
+*  Type <code>ls</code>. What other files are here? 
+*  To make a new folder using the terminal type <code>mkdir fmriLab</code>
+*  Move yourself into the folder with data by typing <code>cd fmriLab</code></p>
+<p><strong>Second prep step</strong>, download some images: <br/>
+*  Copy/paste <code>wget -O lab01_images.tar.gz https://osf.io/bprq5/download/</code>
+*  Use commands introduced above to see what was downloaded
+*  To unpack the download copy/paste <code>tar -xvf lab01_images.tar.gz</code>
+*  Move yourself into the folder with data by typing <code>cd osfshare</code>
+<br/></p>
+<p><strong>Open fsleyes</strong>: <br/>
+*  Open fsleyes by typing <code>fsleyes &amp;</code>
+  *  The <code>&amp;</code> at the end tells the terminal to run this program in the background, meanwhile you still have access to the terminal to run other commands
+<br/></p>
+<p><strong>Open an image with fsleyes</strong>: <br/>
+*  Click on <code>File</code> -&gt; <code>Add from file</code>
+*  Open the file named <code>sub-97-T1w_defaced.nii.gz</code>
+*  Overlay another file, open the file named <code>sub-97-T1w_brain.nii.gz</code>
+*  Change the color scale of the top image to see what is different
+<br/></p>
+<p><strong>Understanding the T1 image: Try to answer these questions with your neighbors</strong> <br></p>
+<blockquote>
+<p>1.0. "defaced" means the face has been removed from the image, why do you think we did that? How does the defaced image differ from the other image we added? <br>
+  1.1. What kinds of tissues are the brightest and darkest? <br>
+  1.2. Place your cursor at different places in the image and see how it affects coordinates  <br>
+  1.3. In addition to the coordinate location of your cursor, what additional information is being shown here? <br>
+  1.4. How many dimensions are there in the image? <br>
+  1.5. What do the letters on the four sides of each view shown below mean?  <br>
+<br/></p>
+</blockquote>
+<p><strong>Add a functional image on top of the structural</strong>: <br/>
+*  Use steps learned from above to add a new image
+*  Add the file named <code>sub-97_task-flanker_bold.nii.gz</code>
+*  Place cursor in the brain somewhere and then toggle on/off the functional image using this button 
+<img alt="Introduction-to-FSLeyes_toggle-eye-fsleyes" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/053288c2-8086-4b68-b2cf-5b5ee4598da1" />
+<br/></p>
+<p><strong>Try to answer these questions with your neighbors</strong> <br></p>
+<blockquote>
+<p>2.0. Does the functional image have more or less anatomical detail than the structural T1 image? <br>
+ 2.1. What kinds of tissues are the brightest and darkest? <br>
+ 2.2. How many dimensions are there in the functional image? <br>
+ 2.3. Use the menu at the top-left of your screen to view the BOLD timeseries for a voxel: View -&gt; Time Series. How does the timeseries compare inside vs. outside the brain? What do the numbers represent for the y-axis of the timeseries? <br>
+<br></p>
+</blockquote>
+<p><strong>Example with timeseries viewer on:</strong> <br>
+<img alt="Introduction-to-FSLeyes_time-series" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/e88cfa75-3fc9-4fc4-af3f-415ace30c713" /></p>
+<p><br/></p>
 
 
 
@@ -355,10 +350,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
