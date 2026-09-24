@@ -19,7 +19,7 @@
     
     
       
-        <title>View structural and functional MR images with FSLeyes - Cognitive Neuroscience fMRI</title>
+        <title>Skull Strip the T1 anatomical image clean - Cognitive Neuroscience fMRI</title>
       
     
     
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              View structural and functional MR images with FSLeyes
+              Skull Strip the T1 anatomical image clean
             
           </span>
         </div>
@@ -240,72 +240,55 @@
 
 
 
-  <h1>View structural and functional MR images with FSLeyes</h1>
+  <h1>Skull Strip the T1 anatomical image clean</h1>
 
-<p><strong>By the end of this practical you should be able to:</strong></p>
+<p><strong>By the end of this practical you should be able to complete preprocessing on your data with the following steps:</strong></p>
 <ul>
-<li>[ ] Use the terminal to navigate to where your MRI data for this course will be</li>
-<li>[ ] Open MR images with FSLeyes</li>
-<li>[ ] Distinguish between structural and functional images in contrast, resolution, and dimensions</li>
-<li>[ ] Use FSLeyes to identify the coordinates and intensity at the cursor location, and toggle images on/off</li>
-<li>[ ] View the time series of a functional image and understand what it means</li>
+<li>[ ] Use FSL's <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/BET/UserGuide">BET</a> tool to remove the skull from a T1 image</li>
+<li>[ ] Use FSLeyes to check the output of <code>BET</code></li>
 </ul>
 <p><strong>Access FastX</strong> through the remote login:</p>
 <p>https://fastx.divms.uiowa.edu:3443/</p>
-<p><strong>First prep step:</strong> Make a folder for holding data for our labs.</p>
+<p><strong>In the terminal, move to the folder where our downloaded data is:</strong></p>
 <ul>
-<li>Open your terminal by clicking on the icon showing a little black screen.</li>
-<li>Type <code>pwd</code>. Where are you in the computer filesystem?</li>
-<li>Type <code>ls</code>. What other files are here?</li>
-<li>To make a new folder using the terminal, type <code>mkdir fmriLab</code>.</li>
-<li>Move yourself into the folder with data by typing <code>cd fmriLab</code>.</li>
+<li>At the terminal prompt, type <code>cd fmriLab</code></li>
+<li>Type <code>ls</code> and you should see the data you downloaded as a folder named <code>flankerData_n4</code></li>
 </ul>
-<p><strong>Second prep step:</strong> Download some images.</p>
+<p><strong>Using FSL's Brain Extraction Tool (BET) to skull-strip:</strong></p>
 <ul>
-<li>Copy/paste <code>wget -O lab01_images.tar.gz https://osf.io/bprq5/download/</code>.</li>
-<li>Use commands introduced above to see what was downloaded.</li>
-<li>To unpack the download, copy/paste <code>tar -xvf lab01_images.tar.gz</code>.</li>
-<li>Move yourself into the folder with data by typing <code>cd osfshare</code>.</li>
+<li>At the prompt, type <code>fsl</code></li>
+<li>Click the <strong>BET brain extraction</strong> button on the FSL menu</li>
+<li>Set up <code>BET</code>:<ul>
+<li>Click the yellow folder to select your defaced T1 image with skull as your <strong>Input Image</strong></li>
+<li>FSL will automatically fill in the <strong>Output Image</strong> with the same filename as your T1 and <code>_brain</code> at the end</li>
+<li>Expand <strong>Advanced Options</strong><ul>
+<li>Select <strong>Output binary brain mask image</strong></li>
 </ul>
-<p><strong>Open FSLeyes:</strong></p>
+</li>
+<li>Select <strong>Go</strong> to run <code>BET</code></li>
+</ul>
+</li>
+<li>Example default settings:</li>
+</ul>
+<p><img alt="betDefault" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/b39c96b4-29ba-455d-9135-f74f5b8d2eec" /></p>
+<p><strong>Checking BET:</strong></p>
 <ul>
-<li>Open FSLeyes by typing <code>fsleyes &amp;</code>.<ul>
-<li>The <code>&amp;</code> at the end tells the terminal to run this program in the background. Meanwhile, you still have access to the terminal to run other commands.</li>
+<li>Use the GUI menu to open your defaced T1 and brain mask in FSLeyes</li>
+<li>Use the <strong>Opacity</strong> slider to make the mask transparent so you can see the brain image in the background</li>
+<li>Use this checklist:<ul>
+<li>[ ] <strong>Top of the brain:</strong> Does the mask cover the brain without spilling into the eyes or skull?</li>
+<li>[ ] <strong>Bottom of the brain:</strong> Does the mask "hug" the brainstem without spilling into the throat?</li>
 </ul>
 </li>
 </ul>
-<p><strong>Open an image with FSLeyes:</strong></p>
+<p><strong>Modifying BET settings:</strong></p>
 <ul>
-<li>Click on <code>File</code> → <code>Add from file</code>.</li>
-<li>Open the file named <code>sub-97-T1w_defaced.nii.gz</code>.</li>
-<li>Overlay another file: open the file named <code>sub-97-T1w_brain.nii.gz</code>.</li>
-<li>Change the color scale of the top image to see what is different.</li>
+<li>Open or return to the BET GUI</li>
+<li>An advanced option that often helps: use the dropdown menu to select <strong>Robust brain centre estimation</strong></li>
+<li>If your mask was too small or too large at the top of the brain, change the <strong>Fractional intensity threshold</strong></li>
+<li>If your mask was too small or too large at either the top or bottom of the brain, change the <strong>Threshold gradient</strong></li>
 </ul>
-<p><strong>Understanding the T1 image: Try to answer these questions with your neighbors.</strong></p>
-<ol>
-<li>"Defaced" means the face has been removed from the image. Why do you think we did that? How does the defaced image differ from the other image we added?</li>
-<li>What kinds of tissues are the brightest and darkest?</li>
-<li>Place your cursor at different places in the image. How does this affect the coordinates?</li>
-<li>In addition to the coordinate location of your cursor, what additional information is being shown here?</li>
-<li>How many dimensions are there in the image?</li>
-<li>What do the letters on the four sides of each view shown below mean?</li>
-</ol>
-<p><strong>Add a functional image on top of the structural:</strong></p>
-<ul>
-<li>Use the steps learned above to add a new image.</li>
-<li>Add the file named <code>sub-97_task-flanker_bold.nii.gz</code>.</li>
-<li>Place the cursor somewhere in the brain and then toggle the functional image on/off using this button:</li>
-</ul>
-<p><img alt="Introduction-to-FSLeyes_toggle-eye-fsleyes" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/053288c2-8086-4b68-b2cf-5b5ee4598da1" /></p>
-<p><strong>Try to answer these questions with your neighbors.</strong></p>
-<ol>
-<li>Does the functional image have more or less anatomical detail than the structural T1 image?</li>
-<li>What kinds of tissues are the brightest and darkest?</li>
-<li>How many dimensions are there in the functional image?</li>
-<li>Use the menu at the top-left of your screen to view the BOLD time series for a voxel: <code>View</code> → <code>Time Series</code>. How does the time series compare inside vs. outside the brain? What do the numbers represent for the y-axis of the time series?</li>
-</ol>
-<p><strong>Example with time series viewer on:</strong></p>
-<p><img alt="Introduction-to-FSLeyes_time-series" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/e88cfa75-3fc9-4fc4-af3f-415ace30c713" /></p>
+<p><img alt="betMods" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/5b5a6a4f-fffb-4a25-8920-c1c52e6e6839" /></p>
 
 
 
