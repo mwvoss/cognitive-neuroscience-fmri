@@ -12,7 +12,7 @@ This site contains notes, tutorials, examples, and resources used in PSY 4025.
 
 ### Imaging Viewing
 
-- [Viewing T1 images](View-structural-and-functional-MR-images-with-FSLeyes.md)
+- [Viewing structural and functional images](View-structural-and-functional-MR-images-with-FSLeyes.md)
 
 
 ### Structural Image Processing
