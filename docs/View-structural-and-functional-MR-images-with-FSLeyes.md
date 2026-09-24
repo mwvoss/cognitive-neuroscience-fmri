@@ -21,6 +21,7 @@ https://fastx.divms.uiowa.edu:3443/
 **Second prep step:** Download some images.
 
 **Open terminal and move to your fmriLab folder:**
+
 - Open your terminal application.
 - At the prompt, move to the bids directory in the terminal by typing `cd ~/fmriLab/`.
 - Copy/paste the following to download the data: `wget -O flankerData_n4_FA25.tar.gz https://osf.io/gzc2a/download`
