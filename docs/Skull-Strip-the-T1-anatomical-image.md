@@ -48,10 +48,10 @@ Example of what your menu options should look like for these default settings:
 - If your mask was too small or too large at either the top or bottom of the brain, change the **Threshold gradient**
 
 
-Example of what your menu options look like with modified settings for Robust BET and modified f, naming the file output to show f and g settings:
+Example of what your menu options look like with modified settings for Robust BET and modified f and g setting, naming the file output to document f and g settings:
 ![BET mod](images/bet_demo-mod.png)
 
-- Work in small groups to change your `-f` and `-g` options to produce different outputs, wrong answers only! You won't break anything, promise.
+- Work in small groups to change your `-f` and `-g` options to produce different outputs, explore a range of options to learn! You won't break anything, promise.
 - Take turns showing each other what happens when these parameters are modified and decide what you think would be a sweet spot of good settings for this image, and why.
 - Use your collective knowledge to setting on a good combination of -f and -g parameters to arrive at a good BET result. 
 
