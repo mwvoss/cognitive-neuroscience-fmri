@@ -323,7 +323,7 @@
 <li>At the prompt, type <code>fsl</code></li>
 <li>Click the <strong>BET brain extraction</strong> button on the FSL menu</li>
 <li>We will use <code>BET</code> to do a brain extraction on the our demo participant</li>
-<li>Set up <code>BET</code>:<ul>
+<li>Set up <code>BET</code> with default options:<ul>
 <li>Click the yellow folder to select your T1 image with skull as your <strong>Input Image</strong></li>
 <li>FSL will automatically fill in the <strong>Output Image</strong> with the same filename as your T1 and <code>_brain</code> at the end</li>
 <li>Expand <strong>Advanced Options</strong><ul>
@@ -331,15 +331,21 @@
 </ul>
 </li>
 <li>Select <strong>Go</strong> to run <code>BET</code></li>
+<li>In the terminal you will see text appear, that text shows how the GUI selections are translated into bash syntax for the fsl software to run the command </li>
+<li><code>Finished</code> will appear in the terminal when BET is done</li>
 </ul>
 </li>
 </ul>
+<p>Example of what your menu options should look like for these default settings: 
+<img alt="BET default" src="../images/bet_demo-default.png" /></p>
 <p><strong>Checking BET:</strong></p>
 <ul>
 <li>Use the GUI menu to open your T1 with skull and brain mask in FSLeyes</li>
-<li>Use the <strong>Opacity</strong> slider to make the mask transparent so you can see the brain image in the background</li>
+<li>Move the mask image to be the top layer in your <code>Overlay list</code></li>
+<li>Change the color of the mask to yellow by selecting the <code>Red-Yellow</code> color scheme</li>
+<li>Use the <strong>Opacity</strong> slider to make the mask semi-transparent so you can see the brain image in the background</li>
 <li>Use this checklist:<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Top of the brain:</strong> Does the mask cover the brain without spilling into the eyes or skull?</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Top of the brain:</strong> Does the mask cover the brain without missing sections OR spilling into the eyes or skull?</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Bottom of the brain:</strong> Does the mask "hug" the brainstem without spilling into the throat?</li>
 </ul>
 </li>
@@ -350,9 +356,21 @@
 <li>An advanced option that often helps: use the dropdown menu to select <strong>Robust brain centre estimation</strong></li>
 <li>If your mask was too small or too large at the top of the brain, change the <strong>Fractional intensity threshold</strong></li>
 <li>If your mask was too small or too large at either the top or bottom of the brain, change the <strong>Threshold gradient</strong></li>
+</ul>
+<p>Example of what your menu options look like with modified settings for Robust BET and modified f, naming the file output to show f and g settings:
+<img alt="BET mod" src="../images/bet_demo-mod.png" /></p>
+<ul>
 <li>Work in small groups to change your <code>-f</code> and <code>-g</code> options to produce different outputs, wrong answers only! You won't break anything, promise.</li>
 <li>Take turns showing each other what happens when these parameters are modified and decide what you think would be a sweet spot of good settings for this image, and why.</li>
+<li>Use your collective knowledge to setting on a good combination of -f and -g parameters to arrive at a good BET result. </li>
 </ul>
+<p><strong>Lab 2 assignment</strong></p>
+<p>Take two screenshots that demonstrate poor and good BET output</p>
+<pre><code>1. Take a screenshot of your poor BET on the T1, with a yellow, reduced opacity mask. Show a view in fsleyes that demonstrates poor brain extraction. 
+2. Save your screenshot as `poor_bet.png`
+3. Take a screenshot of your good BET on the T1, with a yellow, reduced opacity mask. Show the SAME view as shown for your poor result. Use the cursor settings and/or toggling on/off layers to help you show the same slices for both masks.
+4. Save your screenshot as `good_bet.png`
+</code></pre>
 
 
 
