@@ -78,9 +78,10 @@ https://fastx.divms.uiowa.edu:3443/
 
 **Lab 1 assignment**
 
-1. Take a screenshot like the example above with the following showing:
-a.  `sub-001`'s defaced T1 image as the bottom image, and their `flanker-bold` image one top in a different color scheme (you can pick which)
-b. Lower the opacity of the functional image to about 50%
-c. Show a timeseries for the functional image, with your cursor on the voxel coordinates of: x=32, y=42, z=20. Note the color of the line in the timeseries doesn't have to be the same as the example.
-d. Turn in your screenshot to the ICON assignment for Lab 1
+Take a screenshot like the example above with the following showing:
+
+    1. `sub-001`'s defaced T1 image as the bottom image, and their `flanker-bold` image on top in a different color scheme (you can pick which).
+    2. Lower the opacity of the functional image to about 50%.
+    3. Show a timeseries for the functional image, with your cursor on the voxel coordinates **x=32, y=42, z=20**. Note the color of the line in the timeseries doesn't have to be the same as the example.
+    4. Turn in your screenshot to the ICON assignment for Lab 1.
 
