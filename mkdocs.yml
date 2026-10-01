@@ -5,7 +5,8 @@ theme:
 
 nav:
   - Home: index.md
-
+  - View structural and functional MR images with FSLeyes: View-structural-and-functional-MR-images-with-FSLeyes.md
+  - Skull strip the T1 anatomical image: Skull-Strip-the-T1-anatomical-image.md
 
 markdown_extensions:
   - attr_list

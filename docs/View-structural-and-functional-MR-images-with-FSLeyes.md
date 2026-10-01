@@ -24,29 +24,34 @@ https://fastx.divms.uiowa.edu:3443/
 
 - Open your terminal application.
 - At the prompt, move to the bids directory in the terminal by typing `cd ~/fmriLab/`.
-- Copy/paste the following to download the data: `wget -O flankerData_n4_FA25.tar.gz https://osf.io/gzc2a/download`
-- Unpack the download by copy/pasting this in your terminal: `tar -zxvf flankerData_n4_FA25.tar.gz`
-- Type `ls` and you should now see you have a new folder named: `flankerData_n4`
-- The contents of this folder include four sub-folders for subjects sub-001, sub-002, sub-003, sub-004.
+- Copy/paste the following to download the data: `wget -O courseData_FA26.tar.gz https://github.com/mwvoss/cognitive-neuroscience-fmri/releases/download/FA26-data/courseData_FA26.tar.gz`
+- Unpack the download by copy/pasting this in your terminal: `tar -zxvf courseData_FA26.tar.gz`
+- Type `ls` and you should now see you have a new folder named: `courseData_FA26`
+- The contents of this folder include two sub-folders of `sub-demo` and `flankerData_n4`
+- We will discuss the BIDS file naming pattern and the two file types: `.nii.gz` and `.json`
 
 **Open FSLeyes:**
 
 - Open FSLeyes by typing `fsleyes &`.
     - The `&` at the end tells the terminal to run this program in the background. Meanwhile, you still have access to the terminal to run other commands.
 
-**Open an image with FSLeyes:**
+**Open and view images with FSLeyes:**
 
 - Click on `File` → `Add from file`.
-- Open the file named `sub-001_T1w_defaced.nii.gz` which is in sub-001's `anat` folder.
-- Overlay another file: open the file named `sub-001_T1w_defaced_brain.nii.gz`.
-- Change the color scale of the top image to see what is different.
+- Open the T1 image in the anat folder of sub-001 who is in the flanker data set: `sub-001_T1w_defaced.nii.gz`
+- Overlay the two additional images in that directory: `sub-001_T1w_defaced_brain.nii.gz` and `sub-001_T1w_defaced_brain_mask.nii.gz`
+- Use the up and down arrows in the `Overlay list` to put your `_brain_mask.nii.gz` image on top, followed by the `_brain.nii.gz` image
+- Select the `_brain_mask.nii.gz` image and change the color scale, then do the same for the `_brain.nii.gz` image
+- Use the `eye` button to toggle the images on and off to see what is different between them
+- With the mask image selected, reduce the `Opacity` with the slider option in top menu bar
 
-**Understanding the T1 image: Try to answer these questions with your neighbors.**
+
+**Understanding the T1 image files: Try to answer these questions with your neighbors.**
 
 1. "Defaced" means the face has been removed from the image. Why do you think we did that? How does the defaced image differ from the other image we added?
-2. What kinds of tissues are the brightest and darkest?
-3. Place your cursor at different places in the image. How does this affect the coordinates?
-4. In addition to the coordinate location of your cursor, what additional information is being shown here?
+2. Place your cursor at different places in the image. How does this affect the coordinates?
+3. Go to the following voxel locations and record the intensity value for each coordinate (shown in the far right info box): (a) 94, 144, 139; (b) 57, 142, 139; (c) 69, 172, 139. How do the intensities vary with tissue type?
+4. View a histogram of all the intensities in the brain by selecting the `_brain.nii.gz` image and selecting `View -> Histogram`. How many "humps" do you see and describe in words how this relates to the T1 contrast. 
 5. How many dimensions are there in the image?
 6. What do the letters on the four sides of each view shown below mean?
 

@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../Skull-Strip-the-T1-anatomical-image/">
       
       
         
@@ -207,6 +211,68 @@
   
 
     
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    View structural and functional MR images with FSLeyes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Skull-Strip-the-T1-anatomical-image/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skull strip the T1 anatomical image
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -243,12 +309,12 @@
   <h1>View structural and functional MR images with FSLeyes</h1>
 
 <p><strong>By the end of this practical you should be able to:</strong></p>
-<ul>
-<li>[ ] Use the terminal to navigate to where your MRI data for this course will be</li>
-<li>[ ] Open MR images with FSLeyes</li>
-<li>[ ] Distinguish between structural and functional images in contrast, resolution, and dimensions</li>
-<li>[ ] Use FSLeyes to identify the coordinates and intensity at the cursor location, and toggle images on/off</li>
-<li>[ ] View the time series of a functional image and understand what it means</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Use the terminal to navigate to where your MRI data for this course will be</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Open MR images with FSLeyes</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Distinguish between structural and functional images in contrast, resolution, and dimensions</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Use FSLeyes to identify the coordinates and intensity at the cursor location, and toggle images on/off</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> View the time series of a functional image and understand what it means</li>
 </ul>
 <p><strong>Access FastX</strong> through the remote login:</p>
 <p>https://fastx.divms.uiowa.edu:3443/</p>
@@ -261,11 +327,14 @@
 <li>Move yourself into the folder with data by typing <code>cd fmriLab</code>.</li>
 </ul>
 <p><strong>Second prep step:</strong> Download some images.</p>
+<p><strong>Open terminal and move to your fmriLab folder:</strong></p>
 <ul>
-<li>Copy/paste <code>wget -O lab01_images.tar.gz https://osf.io/bprq5/download/</code>.</li>
-<li>Use commands introduced above to see what was downloaded.</li>
-<li>To unpack the download, copy/paste <code>tar -xvf lab01_images.tar.gz</code>.</li>
-<li>Move yourself into the folder with data by typing <code>cd osfshare</code>.</li>
+<li>Open your terminal application.</li>
+<li>At the prompt, move to the bids directory in the terminal by typing <code>cd ~/fmriLab/</code>.</li>
+<li>Copy/paste the following to download the data: <code>wget -O flankerData_n4_FA25.tar.gz https://osf.io/gzc2a/download</code></li>
+<li>Unpack the download by copy/pasting this in your terminal: <code>tar -zxvf flankerData_n4_FA25.tar.gz</code></li>
+<li>Type <code>ls</code> and you should now see you have a new folder named: <code>flankerData_n4</code></li>
+<li>The contents of this folder include four sub-folders for subjects sub-001, sub-002, sub-003, sub-004.</li>
 </ul>
 <p><strong>Open FSLeyes:</strong></p>
 <ul>
@@ -277,8 +346,8 @@
 <p><strong>Open an image with FSLeyes:</strong></p>
 <ul>
 <li>Click on <code>File</code> → <code>Add from file</code>.</li>
-<li>Open the file named <code>sub-97-T1w_defaced.nii.gz</code>.</li>
-<li>Overlay another file: open the file named <code>sub-97-T1w_brain.nii.gz</code>.</li>
+<li>Open the file named <code>sub-001_T1w_defaced.nii.gz</code> which is in sub-001's <code>anat</code> folder.</li>
+<li>Overlay another file: open the file named <code>sub-001_T1w_defaced_brain.nii.gz</code>.</li>
 <li>Change the color scale of the top image to see what is different.</li>
 </ul>
 <p><strong>Understanding the T1 image: Try to answer these questions with your neighbors.</strong></p>
@@ -293,7 +362,7 @@
 <p><strong>Add a functional image on top of the structural:</strong></p>
 <ul>
 <li>Use the steps learned above to add a new image.</li>
-<li>Add the file named <code>sub-97_task-flanker_bold.nii.gz</code>.</li>
+<li>Add the file named <code>sub-001_task-flanker_bold.nii.gz</code> which is in sub-001's <code>func</code> folder.</li>
 <li>Place the cursor somewhere in the brain and then toggle the functional image on/off using this button:</li>
 </ul>
 <p><img alt="Introduction-to-FSLeyes_toggle-eye-fsleyes" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/053288c2-8086-4b68-b2cf-5b5ee4598da1" /></p>
