@@ -316,14 +316,15 @@
 <p><strong>In the terminal, move to the folder where our downloaded data is:</strong></p>
 <ul>
 <li>At the terminal prompt, type <code>cd fmriLab</code></li>
-<li>Type <code>ls</code> and you should see the data you downloaded as a folder named <code>flankerData_n4</code></li>
+<li>Type <code>ls</code> and you should see the data you downloaded as a folder named <code>courseData_FA26</code></li>
 </ul>
 <p><strong>Using FSL's Brain Extraction Tool (BET) to skull-strip:</strong></p>
 <ul>
 <li>At the prompt, type <code>fsl</code></li>
 <li>Click the <strong>BET brain extraction</strong> button on the FSL menu</li>
+<li>We will use <code>BET</code> to do a brain extraction on the our demo participant</li>
 <li>Set up <code>BET</code>:<ul>
-<li>Click the yellow folder to select your defaced T1 image with skull as your <strong>Input Image</strong></li>
+<li>Click the yellow folder to select your T1 image with skull as your <strong>Input Image</strong></li>
 <li>FSL will automatically fill in the <strong>Output Image</strong> with the same filename as your T1 and <code>_brain</code> at the end</li>
 <li>Expand <strong>Advanced Options</strong><ul>
 <li>Select <strong>Output binary brain mask image</strong></li>
@@ -332,12 +333,10 @@
 <li>Select <strong>Go</strong> to run <code>BET</code></li>
 </ul>
 </li>
-<li>Example default settings:</li>
 </ul>
-<p><img alt="betDefault" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/b39c96b4-29ba-455d-9135-f74f5b8d2eec" /></p>
 <p><strong>Checking BET:</strong></p>
 <ul>
-<li>Use the GUI menu to open your defaced T1 and brain mask in FSLeyes</li>
+<li>Use the GUI menu to open your T1 with skull and brain mask in FSLeyes</li>
 <li>Use the <strong>Opacity</strong> slider to make the mask transparent so you can see the brain image in the background</li>
 <li>Use this checklist:<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Top of the brain:</strong> Does the mask cover the brain without spilling into the eyes or skull?</li>
@@ -351,8 +350,9 @@
 <li>An advanced option that often helps: use the dropdown menu to select <strong>Robust brain centre estimation</strong></li>
 <li>If your mask was too small or too large at the top of the brain, change the <strong>Fractional intensity threshold</strong></li>
 <li>If your mask was too small or too large at either the top or bottom of the brain, change the <strong>Threshold gradient</strong></li>
+<li>Work in small groups to change your <code>-f</code> and <code>-g</code> options to produce different outputs, wrong answers only! You won't break anything, promise.</li>
+<li>Take turns showing each other what happens when these parameters are modified and decide what you think would be a sweet spot of good settings for this image, and why.</li>
 </ul>
-<p><img alt="betMods" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/5b5a6a4f-fffb-4a25-8920-c1c52e6e6839" /></p>
 
 
 
