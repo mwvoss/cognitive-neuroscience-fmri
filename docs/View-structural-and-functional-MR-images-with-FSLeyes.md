@@ -49,11 +49,11 @@ https://fastx.divms.uiowa.edu:3443/
 **Understanding the T1 image files: Try to answer these questions with your neighbors.**
 
 1. "Defaced" means the face has been removed from the image. Why do you think we did that? How does the defaced image differ from the other image we added?
-2. Place your cursor at different places in the image. How does this affect the coordinates?
+2. Place your cursor at different places in the image. How does this affect the coordinates? Based on the coordinates you see, how many dimensions are there in the image?
 3. Go to the following voxel locations and record the intensity value for each coordinate (shown in the far right info box): (a) 94, 144, 139; (b) 57, 142, 139; (c) 69, 172, 139. How do the intensities vary with tissue type?
 4. View a histogram of all the intensities in the brain by selecting the `_brain.nii.gz` image and selecting `View -> Histogram`. How many "humps" do you see and describe in words how this relates to the T1 contrast. 
-5. How many dimensions are there in the image?
-6. What do the letters on the four sides of each view shown below mean?
+5. When and why might you use the skills introduced above for comparing layers of multiple images, such as changing color schemes, opacity, and toggling images on and off?
+6. What do you think the letters on the four sides of each view shown below mean?
 
 **Add a functional image on top of the structural:**
 
@@ -73,3 +73,14 @@ https://fastx.divms.uiowa.edu:3443/
 **Example with time series viewer on:**
 
 ![Introduction-to-FSLeyes_time-series](https://github.com/mwvoss/PSY4025_FA23/assets/24663988/e88cfa75-3fc9-4fc4-af3f-415ace30c713)
+
+
+
+**Lab 1 assignment**
+
+1. Take a screenshot like the example above with the following showing:
+a.  `sub-001`'s defaced T1 image as the bottom image, and their `flanker-bold` image one top in a different color scheme (you can pick which)
+b. Lower the opacity of the functional image to about 50%
+c. Show a timeseries for the functional image, with your cursor on the voxel coordinates of: x=32, y=42, z=20. Note the color of the line in the timeseries doesn't have to be the same as the example.
+d. Turn in your screenshot to the ICON assignment for Lab 1
+
