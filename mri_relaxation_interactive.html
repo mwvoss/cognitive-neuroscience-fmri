@@ -6,6 +6,33 @@
 <section class="panel"><h2>1. T1 recovery: longitudinal magnetization (Mz)</h2><p class="muted">TR determines how much longitudinal magnetization recovers before the next RF excitation.</p><svg id="t1graph" viewBox="0 0 650 245" role="img" aria-label="T1 recovery curves for white and gray matter with adjustable TR marker"></svg><div class="controls"><label for="tr">TR: <output id="trval">450</output> ms</label><input id="tr" type="range" min="100" max="2200" step="50" value="450"></div></section>
 <section class="panel"><h2>2. T2 decay: transverse magnetization (Mxy)</h2><p class="muted">TE determines when the echo is measured, after transverse magnetization has decayed.</p><svg id="t2graph" viewBox="0 0 650 245" role="img" aria-label="T2 decay curves for white and gray matter with adjustable TE marker"></svg><div class="controls"><label for="te">TE: <output id="teval">60</output> ms</label><input id="te" type="range" min="10" max="180" step="5" value="60"></div></section>
 <div class="signal"><strong>Simplified relative spin-echo signal</strong><p>White matter: <output id="wmsignal"></output> &nbsp; | &nbsp; Gray matter: <output id="gmsignal"></output></p><p class="note">Signal ∝ (1 − exp(−TR/T1)) × exp(−TE/T2), assuming a 90° excitation, full spin-echo refocusing, equal proton density, and idealized tissue constants. Illustrative T1 values: white matter 350 ms, gray matter 700 ms, selected to demonstrate maximal longitudinal recovery separation at approximately 485 ms. These are not representative in-vivo 3T tissue values. This is a teaching model, not a simulation of MPRAGE or gradient-echo BOLD.</p></div>
+<div style="
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 18px;
+  background: #f0f7fc;
+  border-left: 4px solid #258cb6;
+  border-radius: 6px;
+">
+  <h3 style="margin-top: 0;">
+    Explore MRI Image Contrast
+  </h3>
+
+  <p>
+    Now that you've explored how TR and TE affect
+    T1 and T2 relaxation, see how changing these
+    parameters affects contrast in an MRI image.
+  </p>
+
+  <a
+    href="https://mrisimlab.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    style="font-weight: bold; color: #176b9a;"
+  >
+    Open the MRI Contrast Simulator &rarr;
+  </a>
+</div>
 <p><button id="t1preset">T1-weighted preset</button><button id="t2preset">T2-weighted preset</button><button id="reset">Reset</button></p>
 <h2>Think about it</h2><ol><li>With TE short, at approximately which TR is the difference between the T1 recovery curves largest? What happens if TR becomes much longer?</li><li>When TR is long, what happens to tissue contrast as TE becomes longer?</li><li>Why use a short TE to emphasize T1 contrast?</li><li>Why use a long TR to emphasize T2 contrast?</li></ol>
 <p class="note">Important: T1 recovery curves show longitudinal magnetization, which is not directly measured by the receive coil. The subsequent RF excitation converts available longitudinal magnetization into transverse magnetization. T2 curves show the decay envelope of transverse magnetization, related to the measured spin-echo amplitude. Both TR and TE are defined for both T1- and T2-weighted acquisitions.</p>
