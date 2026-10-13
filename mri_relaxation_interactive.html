@@ -35,7 +35,7 @@
 </div>
 <p><button id="t1preset">T1-weighted preset</button><button id="t2preset">T2-weighted preset</button><button id="reset">Reset</button></p>
 <h2>Think about it</h2><ol><li>With TE short, at approximately which TR is the difference between the T1 recovery curves largest? What happens if TR becomes much longer?</li><li>When TR is long, what happens to tissue contrast as TE becomes longer?</li><li>Why use a short TE to emphasize T1 contrast?</li><li>Why use a long TR to emphasize T2 contrast?</li></ol>
-<p class="note">Important: T1 recovery curves show longitudinal magnetization, which is not directly measured by the receive coil. The subsequent RF excitation converts available longitudinal magnetization into transverse magnetization. T2 curves show the decay envelope of transverse magnetization, related to the measured spin-echo amplitude. Both TR and TE are defined for both T1- and T2-weighted acquisitions.</p>
+<p class="note">Important: T1 recovery curves show longitudinal magnetization, which is not directly measured by the receive coil. The subsequent RF excitation converts available longitudinal magnetization into transverse magnetization. T2 curves show the decay envelope of transverse magnetization, related to the measured spin-echo amplitude. This is the signal measured at the echo, reflecting both how much longitudinal magnetization recovered before excitation (TR) and how much transverse magnetization remains at the echo (TE). Both TR and TE are defined for both T1- and T2-weighted acquisitions.</p>
 <script>
 const tissues=[{name:'White matter',t1:350,t2:70,color:'#d18a36'},{name:'Gray matter',t1:700,t2:100,color:'#258cb6'}];
 const tr=document.getElementById('tr'),te=document.getElementById('te');
