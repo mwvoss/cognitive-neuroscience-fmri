@@ -309,16 +309,18 @@ The program we'll use for viewing and analyzing MRI data is called <a href="http
 <li>If unsure what this looks like, hover over the icons in the top left of the screen with your cursor and click on the <code>MATE terminal</code> icon</li>
 <li>At the prompt type <code>gedit .bashrc</code></li>
 <li>We've just opened the <code>.bashrc</code> file with the text editor program <code>gedit</code></li>
-<li>Add the following lines to your <code>.bashrc</code> file (copy/paste encouraged)</li>
-</ul>
-<pre><code>export FSLDIR=/opt/fsl
+<li>
+<p>Add the following lines to your <code>.bashrc</code> file (copy/paste encouraged)
+<div class="highlight"><pre><span></span><code>export FSLDIR=/opt/fsl
 export PATH=${FSLDIR}/bin:\
 ${PATH}
 export LD_LIBRARY_PATH=/opt/fsl/extralibs
 . ${FSLDIR}/etc/fslconf/fsl.sh
-</code></pre>
-<ul>
-<li>Click <code>Save</code></li>
+</code></pre></div></p>
+</li>
+<li>
+<p>Click <code>Save</code></p>
+</li>
 <li>In the terminal type <code>source .bashrc</code></li>
 <li><strong>Did it work?</strong></li>
 <li>In the terminal type <code>fsl</code></li>

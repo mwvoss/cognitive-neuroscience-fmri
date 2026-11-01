@@ -4,7 +4,7 @@
 - [ ] set up preprocessing in the FEAT GUI
 - [ ] create and understand a model of task-related BOLD signal in the FEAT GUI
 - [ ] understand how to test for activation differences between conditions
-- [ ] locate and view the activation maps in fsleyes
+- [ ] understand how to check the quality of registration, motion, and activation maps
 
 **Open the FEAT GUI from the flanker data directory:**
 
@@ -230,10 +230,8 @@ Quality control helps us determine whether the statistical results are trustwort
 
 Submit **two screenshots for sub-001** to the lab assignment on ICON:
 
-1. **Task model:** The FEAT design/model visualization showing the task regressors. The TA will check that the model was generated and that the condition timing looks reasonable.
-2. **Completed FEAT report:** The Post-stats section of the `flanker.feat` HTML report, with contrast labels and statistical maps visible. The TA will check that the analysis completed and that the expected contrasts were produced.
-
-Include your subject identifier in the screenshot or filename. **A blank statistical map is not automatically an error.** Your QC observations should explain any concerns.
+1. **Task model:** The FEAT design/model visualization showing the task regressors. Have your file path visible at the top of the report page in your screenshot. The TA will check that the model was generated and that the condition timing looks reasonable.
+2. **Completed FEAT report:** The Post-stats section of the `flanker.feat` HTML report for the `con` condition, with your path visible, and contrast labels and statistical maps visible. The TA will check that the analysis completed and that the expected activation map was produced.
 
 These screenshots demonstrate completion and allow a quick check, but they do not independently verify every FEAT setting. Use the checklist above to evaluate registration, motion, and activation quality.
 
