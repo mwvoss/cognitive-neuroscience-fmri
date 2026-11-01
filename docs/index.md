@@ -10,7 +10,7 @@ This site contains notes, tutorials, examples, and resources used in PSY 4025.
 
 - [Set up FSL in FastX](Set-up-FSL-in-fastx.md)
 
-### Imaging Viewing
+### Image Viewing
 
 - [Viewing structural and functional images](View-structural-and-functional-MR-images-with-FSLeyes.md)
 
@@ -18,3 +18,8 @@ This site contains notes, tutorials, examples, and resources used in PSY 4025.
 ### Structural Image Processing
 
 - [Skull stripping](Skull-Strip-the-T1-anatomical-image.md)
+
+
+### Structural Image Processing
+
+- [First-level task analysis](Single-subject_preprocess-task-model.md)
