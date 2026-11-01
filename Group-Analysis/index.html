@@ -59,6 +59,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#lab-submission-evidence-of-completion" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -279,6 +284,25 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lab-submission-evidence-of-completion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab Submission: Evidence of Completion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -303,7 +327,7 @@
 <p><strong>Access FastX</strong> through the remote login: <br>
 https://fastx.divms.uiowa.edu:3443/  <br/>
 <br/></p>
-<p><strong>Prerequisite</strong>: Before you start group analysis, you should have <code>flanker.feat</code> output folders that you created for sub-001, sub-002, and sub-003. 
+<p><strong>Prerequisite</strong>: Before you start group analysis, you should have <code>flanker.feat</code> output folders that you created for sub-001, sub-002, sub-003, and sub-004. 
 <br/>
 <br/></p>
 <p><strong>Group analysis GUI</strong>: Our group analysis will determine the average activation across subjects for each of our contrasts that we made within-subjects (e.g., con&gt;baseline, neu&gt;baseline, inc&gt;baseline, errors&gt;baseline, inc&gt;nue, con&gt;neu).
@@ -314,54 +338,44 @@ https://fastx.divms.uiowa.edu:3443/  <br/>
 <br/></p>
 <p><strong>Set input and output on <code>Data</code> tab</strong>:<br/>
 *  Keep default of <code>Inputs are lower-level FEAT directories</code>
-*  Keep <code>Number of inputs</code> to 3, because we have 3 subjects 
+*  Keep <code>Number of inputs</code> to 4, because we have 4 subjects 
 *  Click to <code>Select FEAT directories</code> and select each of your <code>flanker.feat</code> folders: <br/>
-<img width="582" alt="featGroupInput" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/9b0f73d1-e26b-45ca-88de-1409dc11c3e9"></p>
+<img alt="Input Subs" src="../images/feat-group_input-subs.png" /></p>
 <ul>
 <li>Keep <code>Use lower-level copes</code> as default, these are the six contrasts we set for the single-subject analyses</li>
-<li>Specify output directory to be in derivatives with the name <code>group_n3</code>: <br/>
-<img width="438" alt="featGroupOutput" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/f24b4bed-9b64-43bc-8da9-4097405df1e3">
+<li>Specify output directory to be in derivatives with the name <code>group_n4</code>: <br/>
+<img alt="Output directory" src="../images/feat-group_output-dir.png" />
 <br/></li>
 </ul>
 <p><strong>Setup group model on <code>Stats</code> tab</strong>: <br/>
 *  Select <code>Fixed effects</code>, which computes an average generalizable to only this set of participants. This is most appropriate if you have less than 10 subjects.
 *  Select <code>Model setup wizard</code> and keep the default of <code>single-group average</code> and click <code>Process</code>: <br/>
-<img alt="group-analysis_feat-model-setup-wizard-single-group" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/73f3499e-e7a0-49d8-9230-672126567699" /></p>
-<p><br/></p>
+<img alt="Group Model Wizard" src="../images/feat-group_model-wizard.png" />
+<br/></p>
 <p><strong>Our group model</strong>: Now what does the red line represent?<br/>
-<img alt="group-analysis_feat-group-model" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/74ff39e2-c4eb-4f3c-a372-221d0e05c311" /></p>
-<p><br/></p>
+<img alt="Group Model" src="../images/feat-group_model-group.png" />
+<br/></p>
 <p><strong>Post-stats tab</strong>: all settings here can stay as default.
 <br/></p>
 <p><strong>Click <code>Go</code></strong>: 
 *  An html output report will come up in your browser, or you can find it in the output folder you specified
-*  Once done, navigate to <code>Results</code> and click on <code>Lower-level contrast 3 (inc)</code>
+*  Once done, navigate to the <code>Registration summary</code> tab and evaluate that input subjects and alignment are what you expect
+*  Next, navigate to <code>Results</code> and click on <code>Lower-level contrast 3 (inc)</code>
 *  You should see the map below: <br/>
-<img width="738" alt="incActivation" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/106c6699-9fa1-4beb-b3cc-270640bed30e"></p>
+<img alt="Group Output" src="../images/feat-group_group-map-inc.png" /></p>
 <p><br/></p>
 <ul>
 <li>Click on the image in the html report, let's talk about the table you see below: <br/>
-<img width="1381" alt="clusterTable" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/4b0d867b-d917-4851-a358-f9ba51c8b2a2"></li>
+<img alt="Group Output" src="../images/feat-group_group-table-inc.png" /></li>
 </ul>
 <p><br/>
 <br/></p>
-<ul>
-<li>Just like with single-subject analyses, we can also use <code>fsleyes</code> to view the results more interactively:<ul>
-<li>Use the html report to locate the directory where the activation maps are on your computer</li>
-<li>Use the terminal to move yourself there: e.g., <code>cd ~/fmriLab/flankerData_n4/group_n3.gfeat/cope3.feat/</code></li>
-<li>Open <code>fsleyes</code> through the terminal with settings for viewing FEAT output: <code>fsleyes -ad /opt/fsl/data/standard/MNI152_T1_2mm_brain.nii.gz thresh_zstat1.nii.gz</code></li>
-<li>Change your color scale to orange-&gt;yellow</li>
-<li>Show your cluster table by selecting: View-&gt; Layouts -&gt; FEAT Mode</li>
-<li>Clicking on the buttons with arrows in the column labeled <code>Z Max location</code> will move your cursor to the location of that peak in brain activation. </li>
-<li>See information from neuroanatomy atlases by selecting: Settings -&gt; Ortho View 1 -&gt; Atlas panel</li>
-<li>You should see a display like below in <code>fsleyes</code>. 
-<img alt="Screen Shot 2023-11-07 at 6 31 22 AM" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/ef5c0331-7284-48da-971f-f40444daa13c" /></li>
-</ul>
-</li>
-</ul>
-<p><br/>
-<br/></p>
-<p>For your next fMRI task analysis technical assignment, you will need to complete the single-subject task analysis for sub-004 and create a new group analysis that includes all subjects in your dataset (sub-001, sub-002, sub-003, sub-004)</p>
+<h2 id="lab-submission-evidence-of-completion">Lab Submission: Evidence of Completion</h2>
+<p>Submit <strong>two PDFs from your group analysis</strong> to the lab assignment on ICON:</p>
+<ol>
+<li><strong>Registration summary:</strong> Print and save as PDF your Registration summary from your Higher-Level FEAT Report. The TA will evaluate if you have all the correct subjects input with the correct brain as under-lay and over-lay.</li>
+<li><strong>Completed FEAT report:</strong> The Post-stats section of the <code>flanker.feat</code> HTML report for the <code>con &gt; neu</code> condition. Print and save as PDF your results summary page for this contrast from your Higher-Level FEAT Report. The TA will check that the analysis completed and that the expected activation map was produced.</li>
+</ol>
 
 
 
