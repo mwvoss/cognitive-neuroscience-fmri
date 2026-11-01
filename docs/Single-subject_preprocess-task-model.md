@@ -230,10 +230,10 @@ Quality control helps us determine whether the statistical results are trustwort
 
 Submit **two screenshots for sub-001** to the lab assignment on ICON:
 
-1. **Task model:** The FEAT design/model visualization showing the task regressors. Have your file path visible at the top of the report page in your screenshot. The TA will check that the model was generated and that the condition timing looks reasonable.
-2. **Completed FEAT report:** The Post-stats section of the `flanker.feat` HTML report for the `con` condition, with your path visible, and contrast labels and statistical maps visible. The TA will check that the analysis completed and that the expected activation map was produced.
+1. **Task model:** The FEAT design/model visualization showing the task regressors. Print and save as PDF your task model summary from your FEAT Report.  The TA will check that the model was generated and that the condition timing looks reasonable.
+2. **Completed FEAT report:** The Post-stats section of the `flanker.feat` HTML report for the `con` condition. Print and save as PDF from your FEAT Report.  The TA will check that the analysis completed and that the expected activation map was produced.
 
-These screenshots demonstrate completion and allow a quick check, but they do not independently verify every FEAT setting. Use the checklist above to evaluate registration, motion, and activation quality.
+These PDFs demonstrate completion and allow a quick check, but they do not independently verify every FEAT setting. Use the checklist above to evaluate registration, motion, and activation quality.
 
 ---
 
