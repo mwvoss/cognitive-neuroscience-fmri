@@ -5,7 +5,7 @@
 By the end of this practical, you should be able to:
 
 - [ ] Use the FEAT GUI to create a group-level map of task-related BOLD activation.
-- [ ] Locate and interpret group-level results using the FEAT HTML report and FSLeyes.
+- [ ] Locate and interpret group-level results using the FEAT HTML report.
 
 ## Before you begin
 
