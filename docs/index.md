@@ -20,6 +20,7 @@ This site contains notes, tutorials, examples, and resources used in PSY 4025.
 - [Skull stripping](Skull-Strip-the-T1-anatomical-image.md)
 
 
-### Functional MRI Task Processing
+### Functional MRI Task Processing and Analysis
 
 - [First-level task analysis](Single-subject_preprocess-task-model.md)
+- [Group task analysis](Group-Analysis.md)
