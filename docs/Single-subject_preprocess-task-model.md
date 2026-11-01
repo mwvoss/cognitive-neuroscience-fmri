@@ -1,100 +1,81 @@
-**By the end of this practical you should be able to:** <br/>
-* [ ] identify the two nifti images that are INPUT to the task analsysis  <br/>
-* [ ] set up preprocessing in the FEAT GUI <br/>
-* [ ] create and understand a model of task-related BOLD signal in the FEAT GUI <br/>
-* [ ] understand how to test for activation differences between conditions <br/>
-* [ ] locate and view the activation maps in fsleyes <br/>
+**By the end of this practical you should be able to:**
 
+- [ ] identify the two nifti images that are INPUT to the task analsysis
+- [ ] set up preprocessing in the FEAT GUI
+- [ ] create and understand a model of task-related BOLD signal in the FEAT GUI
+- [ ] understand how to test for activation differences between conditions
+- [ ] locate and view the activation maps in fsleyes
 
-**Open the FEAT GUI from the flanker data directory:**<br/>
-*  Open the terminal and type `cd fmriLab/courseData_FA26/flankerData_n4`
-*  In terminal type `fsl` and click on `FEAT FMRI analysis`
+**Open the FEAT GUI from the flanker data directory:**
 
+- Open the terminal and type `cd fmriLab/courseData_FA26/flankerData_n4`
+- In terminal type `fsl` and click on `FEAT FMRI analysis`
 
-**Data tab in FEAT GUI:**<br/>
-*  On the `Data` tab, click `Select 4D data` and select your subject's fMRI flanker data
-*  For example, subject sub-001's functional flanker data is in the `func` folder and named `sub-001_task-flanker_bold.nii.gz`
-*  Set the `Output directory` as that subject's `func` folder. Do this by clicking on the yellow folder and selecting their func folder.
-*  Name your output folder `flanker.feat` like the example below
-*  Do not delete volumes or change the high-pass filter <br/>
+**Data tab in FEAT GUI:**
+
+- On the `Data` tab, click `Select 4D data` and select your subject's fMRI flanker data
+- For example, subject sub-001's functional flanker data is in the `func` folder and named `sub-001_task-flanker_bold.nii.gz`
+- Set the `Output directory` as that subject's `func` folder. Do this by clicking on the yellow folder and selecting their func folder.
+- Name your output folder `flanker.feat` like the example below
+- Do not delete volumes or change the high-pass filter
 
 ![Output directory](images/feat-single_output-dir.png)
 
+**Pre-stats tab in FEAT GUI:**
 
-**Pre-stats tab in FEAT GUI:**<br/>
-*  Keep MCFLIRT on with the default reference volume
-*  Keep slice-timing as `None` here
-*  Keep BET brain extraction on for the functional data (yellow box means 'on')
-*  Set spatial smoothing to 6 mm
-*  Keep the highpass filter on 
-*  Do not turn on MELODIC ICA data exploration
-<br/>
+- Keep MCFLIRT on with the default reference volume
+- Keep slice-timing as `None` here
+- Keep BET brain extraction on for the functional data (yellow box means 'on')
+- Set spatial smoothing to 6 mm
+- Keep the highpass filter on
+- Do not turn on MELODIC ICA data exploration
 
 ![PreStats](https://github.com/mwvoss/PSY4025_FA23/assets/24663988/53de9dd7-3b9c-4242-bd3c-85f8f704760a)
 
+**Registration tab in FEAT GUI:**
 
-**Registration tab in FEAT GUI:**<br/>
-*  Select `Main structural image` to open that window
-*  Set your skull-stripped `_brain` image that you skull-stripped as the main structural image
-*  Change search options to `Full search` and `12 DOF` <br/>
+- Select `Main structural image` to open that window
+- Set your skull-stripped `_brain` image that you skull-stripped as the main structural image
+- Change search options to `Full search` and `12 DOF`
 
 ![Registration](https://github.com/mwvoss/PSY4025_FA23/assets/24663988/830efd78-6083-461b-bb4a-e9dbbaf91084)
 
+**Setting up task model in the Stats Tab in the FEAT GUI:**
 
-**Setting up task model in the Stats Tab in the FEAT GUI:**<br/>
+- Move to the `Stats` tab, first turn on `Add additional confound EVs` and then select the `outliers.txt` file in your `beh` folder as shown:
 
-*  Move to the `Stats` tab, first turn on `Add additional confound EVs` and then select the `outliers.txt` file in your `beh` folder as shown: <br/>
 <img width="578" alt="inputOutliers" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/d4e1ccb6-998a-49ae-a690-db9652d3e7fc">
-<br/>
-<br/>
-<br/>
 
-*  Next, click on `Full model setup`. Set up your model using tabs for each explanatory variable (EV) like shown below: <br/>
+- Next, click on `Full model setup`. Set up your model using tabs for each explanatory variable (EV) like shown below:
 
-EV1: <br/>
-<img width="420" alt="EV-con" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/3e3e2b63-4ddc-4034-97fa-e5ed76bfeaa3"> <br/>
-<br/>
-<br/>
+EV1:
 
-EV2: <br/>
-<img width="424" alt="EV-neu" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/8837262b-edf5-406d-b0d1-219f97360c3b"> <br/>
-<br/>
-<br/>
+<img width="420" alt="EV-con" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/3e3e2b63-4ddc-4034-97fa-e5ed76bfeaa3">
 
-EV3: <br/>
-<img width="421" alt="EV-inc" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/c3492c2e-fb3f-4438-9801-f7454e46f2ad"> <br/>
-<br/>
-<br/>
+EV2:
 
-EV4: <br/>
-<img width="420" alt="EV-errors" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/8560cd5f-34c5-4ef7-90ae-7692bde43083"> <br/>
-<br/>
-<br/>
+<img width="424" alt="EV-neu" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/8837262b-edf5-406d-b0d1-219f97360c3b">
 
-*  After setting up the EVs, stay in the `Full model setup` window and go to the `Contrasts & F-tests` tab. Set up the contrasts as below. Click `Done` when setup complete. <br/>
+EV3:
+
+<img width="421" alt="EV-inc" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/c3492c2e-fb3f-4438-9801-f7454e46f2ad">
+
+EV4:
+
+<img width="420" alt="EV-errors" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/8560cd5f-34c5-4ef7-90ae-7692bde43083">
+
+- After setting up the EVs, stay in the `Full model setup` window and go to the `Contrasts & F-tests` tab. Set up the contrasts as below. Click `Done` when setup complete.
+
 <img width="424" alt="taskContrasts" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/9af5a33b-4a12-4073-97b2-af3eeb9f18b6">
 
-<br/>
-<br/>
-</br>
+- After completing the `Full model setup` you will get your task model!
 
-* After completing the `Full model setup` you will get your task model! <br/>
 <img width="587" alt="taskModel" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/3449ea40-1033-4476-83ec-646d37af9df9">
 
-<br/>
-<br/>
+- The last tab in the FEAT GUI is `Post-stats`. We will leave the defaults on for now. The settings here are most relevant when we get to group-level analyses.
 
-* The last tab in the FEAT GUI is `Post-stats`. We will leave the defaults on for now. The settings here are most relevant when we get to group-level analyses.
-
-<br/>
-<br/>
-
-* Click `Go`. When it's finished, the results will appear within your `flanker.feat` directory. Your html report will then include output of brain activation maps as previewed below.<br/>
+- Click `Go`. When it's finished, the results will appear within your `flanker.feat` directory. Your html report will then include output of brain activation maps as previewed below.
 ![Feat map](images/feat-single_output-map.png)
-
-<br/>
-<br/>
-
 
 # Lab: First-Level fMRI Analysis — Quality Control
 
@@ -123,7 +104,6 @@ For each section:
 ## 1. Registration
 
 **Question: Are the functional, anatomical, and standard-space images aligned correctly?**
-
 ### Checklist
 
 - [ ] **Functional to high-resolution (example_func2highres):** Do the outer borders of the brain and major anatomical features align?
@@ -146,7 +126,6 @@ For each section:
 ## 2. Pre-stats: Head Motion
 
 **Question: Is head motion likely to compromise the analysis?**
-
 Your functional voxel dimensions are **3.5 × 3.5 × 4 mm**.
 
 ### Checklist
@@ -180,7 +159,6 @@ Your functional voxel dimensions are **3.5 × 3.5 × 4 mm**.
 ## 3. Post-stats: Statistical Activation Maps
 
 **Question: Do the statistical maps appear plausible and interpretable?**
-
 The Post-stats section displays statistical activation maps for each condition and comparisons between conditions.
 
 ### Checklist
@@ -226,22 +204,19 @@ After reviewing all three sections, consider the overall quality of the analysis
 
 | FEAT section | Pass | Questionable | Fail |
 |---|---|---|---|
-| Registration | [ ] | [ ] | [ ] |
-| Pre-stats: Motion | [ ] | [ ] | [ ] |
-| Post-stats: Activation | [ ] | [ ] | [ ] |
+| Registration | ☐ | ☐ | ☐ |
+| Pre-stats: Motion | ☐ | ☐ | ☐ |
+| Post-stats: Activation | ☐ | ☐ | ☐ |
 
 ### Reflection Questions
 
 **1. Would you include this participant's first-level analysis in a group-level analysis?**
-
 Explain your decision using evidence from registration, motion, and activation maps.
 
 **2. Which quality-control finding concerns you most, and why?**
-
 Consider how it could affect interpretation of the statistical results.
 
 **3. Can an analysis complete successfully in FEAT but still produce invalid or misleading results?**
-
 Give one example from the FEAT report.
 
 ---
@@ -249,11 +224,21 @@ Give one example from the FEAT report.
 ## Key Takeaway
 
 **A successful FEAT analysis is not necessarily a high-quality analysis.**
-
 Quality control helps us determine whether the statistical results are trustworthy and whether they can be interpreted as meaningful brain activity.
 
-<br/>
-<br/>
+## Lab Submission: Evidence of Completion
 
+Submit **two screenshots for sub-001** to the lab assignment on ICON:
 
-* Once you've completed all the steps above for `sub-001`, repeat for `sub-002` and `sub-003` and `sub-004`. Example PDFs for their FEAT activation reports will be on our course ICON site. Before next class, you should have statistical maps for the same contrasts, in the SAME order, for all subjects.
+1. **Task model:** The FEAT design/model visualization showing the task regressors. The TA will check that the model was generated and that the condition timing looks reasonable.
+2. **Completed FEAT report:** The Post-stats section of the `flanker.feat` HTML report, with contrast labels and statistical maps visible. The TA will check that the analysis completed and that the expected contrasts were produced.
+
+Include your subject identifier in the screenshot or filename. **A blank statistical map is not automatically an error.** Your QC observations should explain any concerns.
+
+These screenshots demonstrate completion and allow a quick check, but they do not independently verify every FEAT setting. Use the checklist above to evaluate registration, motion, and activation quality.
+
+---
+
+## Before next class
+
+Once you've completed all the steps above for `sub-001`, repeat for `sub-002` and `sub-003` and `sub-004`. Example PDFs for their FEAT activation reports will be on our course ICON site. Before next class, you should have statistical maps for the same contrasts, in the SAME order, for all subjects.

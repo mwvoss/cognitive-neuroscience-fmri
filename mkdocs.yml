@@ -12,3 +12,5 @@ markdown_extensions:
   - attr_list
   - pymdownx.tasklist:
       custom_checkbox: true
+      clickable_checkbox: false
+  - pymdownx.superfences
