@@ -19,7 +19,7 @@
     
     
       
-        <title>Group Analysis - Cognitive Neuroscience fMRI</title>
+        <title>Lab: Group-Level fMRI Analysis in FSL FEAT - Cognitive Neuroscience fMRI</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-submission-evidence-of-completion" class="md-skip">
+        <a href="#lab-group-level-fmri-analysis-in-fsl-feat" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Group Analysis
+              Lab: Group-Level fMRI Analysis in FSL FEAT
             
           </span>
         </div>
@@ -283,6 +283,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -291,10 +293,143 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#lab-submission-evidence-of-completion" class="md-nav__link">
+  <a href="#learning-objectives" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lab Submission: Evidence of Completion
+        Learning objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-begin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before you begin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-open-the-group-analysis-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Open the group-analysis GUI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-data-tab-select-input-and-output-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Data tab: Select input and output directories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-stats-tab-set-up-the-group-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Stats tab: Set up the group model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Stats tab: Set up the group model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inspect-the-group-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspect the group model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-post-stats-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Post-stats tab
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-run-the-analysis-and-inspect-the-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Run the analysis and inspect the report
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Run the analysis and inspect the report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-the-registration-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check the registration summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examine-the-group-level-activation-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examine the group-level activation maps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examine-the-statistical-results-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examine the statistical results table
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-lab-submission-evidence-of-completion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Lab submission: Evidence of completion
       
     </span>
   </a>
@@ -318,64 +453,104 @@
 
 
 
-  <h1>Group Analysis</h1>
-
-<p><strong>By the end of this practical you should be able to:</strong> <br/>
-* [ ] use the FEAT GUI to create a group-level map of task-related BOLD activation <br/>
-* [ ] locate and understand results using the html reports and fsleyes <br/>
-<br/></p>
-<p><strong>Access FastX</strong> through the remote login: <br>
-https://fastx.divms.uiowa.edu:3443/  <br/>
-<br/></p>
-<p><strong>Prerequisite</strong>: Before you start group analysis, you should have <code>flanker.feat</code> output folders that you created for sub-001, sub-002, sub-003, and sub-004. 
-<br/>
-<br/></p>
-<p><strong>Group analysis GUI</strong>: Our group analysis will determine the average activation across subjects for each of our contrasts that we made within-subjects (e.g., con&gt;baseline, neu&gt;baseline, inc&gt;baseline, errors&gt;baseline, inc&gt;nue, con&gt;neu).
-*  In terminal, move yourself to your data folder by typing <code>cd ~/fmriLab/</code>
-*  Type <code>fsl</code> and click on <code>FEAT FMRI analysis</code>
-*  In the top-left menu, select <code>Higher-level analysis</code>: <br/>
-<img alt="group-analysis_feat-higher-level-button" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/2c8c866a-2440-40ee-8c9e-46720748132c" />
-<br/></p>
-<p><strong>Set input and output on <code>Data</code> tab</strong>:<br/>
-*  Keep default of <code>Inputs are lower-level FEAT directories</code>
-*  Keep <code>Number of inputs</code> to 4, because we have 4 subjects 
-*  Click to <code>Select FEAT directories</code> and select each of your <code>flanker.feat</code> folders: <br/>
-<img alt="Input Subs" src="../images/feat-group_input-subs.png" /></p>
-<ul>
-<li>Keep <code>Use lower-level copes</code> as default, these are the six contrasts we set for the single-subject analyses</li>
-<li>Specify output directory to be in derivatives with the name <code>group_n4</code>: <br/>
-<img alt="Output directory" src="../images/feat-group_output-dir.png" />
-<br/></li>
+<h1 id="lab-group-level-fmri-analysis-in-fsl-feat">Lab: Group-Level fMRI Analysis in FSL FEAT</h1>
+<h2 id="learning-objectives">Learning objectives</h2>
+<p>By the end of this practical, you should be able to:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Use the FEAT GUI to create a group-level map of task-related BOLD activation.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Locate and interpret group-level results using the FEAT HTML report and FSLeyes.</li>
 </ul>
-<p><strong>Setup group model on <code>Stats</code> tab</strong>: <br/>
-*  Select <code>Fixed effects</code>, which computes an average generalizable to only this set of participants. This is most appropriate if you have less than 10 subjects.
-*  Select <code>Model setup wizard</code> and keep the default of <code>single-group average</code> and click <code>Process</code>: <br/>
-<img alt="Group Model Wizard" src="../images/feat-group_model-wizard.png" />
-<br/></p>
-<p><strong>Our group model</strong>: Now what does the red line represent?<br/>
-<img alt="Group Model" src="../images/feat-group_model-group.png" />
-<br/></p>
-<p><strong>Post-stats tab</strong>: all settings here can stay as default.
-<br/></p>
-<p><strong>Click <code>Go</code></strong>: 
-*  An html output report will come up in your browser, or you can find it in the output folder you specified
-*  Once done, navigate to the <code>Registration summary</code> tab and evaluate that input subjects and alignment are what you expect
-*  Next, navigate to <code>Results</code> and click on <code>Lower-level contrast 3 (inc)</code>
-*  You should see the map below: <br/>
-<img alt="Group Output" src="../images/feat-group_group-map-inc.png" /></p>
-<p><br/></p>
+<h2 id="before-you-begin">Before you begin</h2>
+<p><strong>Access FastX:</strong> <a href="https://fastx.divms.uiowa.edu:3443/">FastX remote login</a>.</p>
+<p><strong>Prerequisite:</strong> You should have completed the first-level analyses for <code>sub-001</code>, <code>sub-002</code>, <code>sub-003</code>, and <code>sub-004</code>. Each subject should have a <code>flanker.feat</code> output directory.</p>
+<p>In this lab, we will combine the four subjects' first-level results to examine the average activation for each of the six contrasts from the single-subject analyses:</p>
 <ul>
-<li>Click on the image in the html report, let's talk about the table you see below: <br/>
-<img alt="Group Output" src="../images/feat-group_group-table-inc.png" /></li>
+<li>Congruent &gt; baseline (<code>con &gt; baseline</code>)</li>
+<li>Neutral &gt; baseline (<code>neu &gt; baseline</code>)</li>
+<li>Incongruent &gt; baseline (<code>inc &gt; baseline</code>)</li>
+<li>Errors &gt; baseline (<code>errors &gt; baseline</code>)</li>
+<li>Incongruent &gt; neutral (<code>inc &gt; neu</code>)</li>
+<li>Congruent &gt; neutral (<code>con &gt; neu</code>)</li>
 </ul>
-<p><br/>
-<br/></p>
-<h2 id="lab-submission-evidence-of-completion">Lab Submission: Evidence of Completion</h2>
-<p>Submit <strong>two PDFs from your group analysis</strong> to the lab assignment on ICON:</p>
+<h2 id="1-open-the-group-analysis-gui">1. Open the group-analysis GUI</h2>
 <ol>
-<li><strong>Registration summary:</strong> Print and save as PDF your Registration summary from your Higher-Level FEAT Report. The TA will evaluate if you have all the correct subjects input with the correct brain as under-lay and over-lay.</li>
-<li><strong>Completed FEAT report:</strong> The Post-stats section of the <code>flanker.feat</code> HTML report for the <code>con &gt; neu</code> condition. Print and save as PDF your results summary page for this contrast from your Higher-Level FEAT Report. The TA will check that the analysis completed and that the expected activation map was produced.</li>
+<li>
+<p>Open a terminal and move to your data directory:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/fmriLab/
+</code></pre></div>
+</li>
+<li>
+<p>Type <code>fsl</code> and select <strong>FEAT FMRI analysis</strong>.</p>
+</li>
+<li>In the top-left menu of FEAT, select <strong>Higher-level analysis</strong>.</li>
 </ol>
+<p><img alt="Higher-level analysis option in FEAT" src="https://github.com/mwvoss/PSY4025_FA23/assets/24663988/2c8c866a-2440-40ee-8c9e-46720748132c" /></p>
+<h2 id="2-data-tab-select-input-and-output-directories">2. Data tab: Select input and output directories</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Keep <strong>Inputs are lower-level FEAT directories</strong> selected.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Set <strong>Number of inputs</strong> to <code>4</code>, because we have four subjects.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Click <strong>Select FEAT directories</strong> and select the <code>flanker.feat</code> directory for each subject.</li>
+</ul>
+<p><img alt="Four subject FEAT input directories" src="../images/feat-group_input-subs.png" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Keep <strong>Use lower-level copes</strong> selected. These correspond to the six contrasts specified in the first-level analyses.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Set the output directory within <code>derivatives</code>, naming the group-level output <code>group_n4</code>.</li>
+</ul>
+<p><img alt="Group-level output directory" src="../images/feat-group_output-dir.png" /></p>
+<h2 id="3-stats-tab-set-up-the-group-model">3. Stats tab: Set up the group model</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Select <strong>Fixed effects</strong>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Select <strong>Model setup wizard</strong>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Keep the default <strong>Single-group average</strong> model and click <strong>Process</strong>.</li>
+</ul>
+<p><img alt="FEAT group model wizard" src="../images/feat-group_model-wizard.png" /></p>
+<p><strong>Why fixed effects?</strong> In this teaching example, we are estimating the average effect for these four participants. A fixed-effects analysis does <strong>not</strong> support generalizing the result to a larger population. We are using it to learn the group-analysis workflow with a very small sample.</p>
+<h3 id="inspect-the-group-model">Inspect the group model</h3>
+<p><img alt="Group model" src="../images/feat-group_model-group.png" /></p>
+<p><strong>Discuss:</strong> What does the red line represent in the group model? How does this model combine information across the four participants?</p>
+<h2 id="4-post-stats-tab">4. Post-stats tab</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Leave the <strong>Post-stats</strong> settings at their defaults for this lab.</li>
+</ul>
+<h2 id="5-run-the-analysis-and-inspect-the-report">5. Run the analysis and inspect the report</h2>
+<ol>
+<li>Click <strong>Go</strong> to run the higher-level FEAT analysis.</li>
+<li>When the analysis finishes, open its HTML report. It may open automatically in your browser; otherwise, find it in your group-level output directory.</li>
+</ol>
+<h3 id="check-the-registration-summary">Check the registration summary</h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Open <strong>Registration summary</strong>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Confirm that the expected four subjects are included.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Inspect the image overlays: are the brains aligned as expected in standard space?</li>
+</ul>
+<h3 id="examine-the-group-level-activation-maps">Examine the group-level activation maps</h3>
+<ol>
+<li>Open <strong>Results</strong>.</li>
+<li>Select <strong>Lower-level contrast 3 (<code>inc</code>)</strong>.</li>
+<li>Compare your output with the example below.</li>
+</ol>
+<p><img alt="Group-level activation map for incongruent condition" src="../images/feat-group_group-map-inc.png" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Confirm that the expected contrast is displayed.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Look for plausible activation clusters and any obvious image artifacts.</li>
+</ul>
+<h3 id="examine-the-statistical-results-table">Examine the statistical results table</h3>
+<p>Click the activation image in the HTML report to view the corresponding results table.</p>
+<p><img alt="Group-level results table for incongruent condition" src="../images/feat-group_group-table-inc.png" /></p>
+<p><strong>Discuss:</strong> What information is reported in the table? How does it relate to the activation map?</p>
+<h2 id="6-lab-submission-evidence-of-completion">6. Lab submission: Evidence of completion</h2>
+<p>Submit <strong>two PDFs from your higher-level FEAT analysis</strong> to the lab assignment on ICON.</p>
+<ol>
+<li><strong>Registration summary PDF:</strong> Open <strong>Registration summary</strong> in your higher-level FEAT HTML report and print/save it as a PDF. The TA will check that the expected subjects are included and that the image underlays and overlays are aligned appropriately.</li>
+<li><strong>Group results PDF for <code>con &gt; neu</code>:</strong> In the <strong>higher-level FEAT HTML report</strong>, open the results summary for the <code>con &gt; neu</code> contrast and print/save that page as a PDF. The TA will check that the analysis completed and that the expected contrast and statistical map are present.</li>
+</ol>
+<p><strong>Before submitting, verify:</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Both PDFs come from the <strong>higher-level</strong> group analysis (<code>group_n4</code>), not an individual subject's <code>flanker.feat</code> report.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The registration PDF shows the expected input subjects and alignment.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The results PDF is for the <strong><code>con &gt; neu</code></strong> contrast.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Both PDFs are readable and uploaded to ICON.</li>
+</ul>
 
 
 

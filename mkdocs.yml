@@ -3,10 +3,18 @@ site_name: Cognitive Neuroscience fMRI
 theme:
   name: material
 
+
 nav:
   - Home: index.md
-  - View structural and functional MR images with FSLeyes: View-structural-and-functional-MR-images-with-FSLeyes.md
-  - Skull strip the T1 anatomical image: Skull-Strip-the-T1-anatomical-image.md
+  - Software Setup:
+      - Set up FSL in FastX: Set-up-FSL-in-fastx.md
+  - Image Viewing:
+      - Viewing structural and functional images: View-structural-and-functional-MR-images-with-FSLeyes.md
+  - Structural Image Processing:
+      - Skull stripping: Skull-Strip-the-T1-anatomical-image.md
+  - Functional MRI Analysis:
+      - First-level task analysis: Single-subject_preprocess-task-model.md
+      - Group-level task analysis: Group-Analysis.md
 
 markdown_extensions:
   - attr_list
